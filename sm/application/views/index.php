@@ -254,7 +254,7 @@
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="<?php echo base_url('signin') ?>"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>
@@ -301,12 +301,12 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="pages-signup.html">
+												<a href="<?php echo base_url('signup') ?>">
 													 Sign Up
 												</a>
 											</li>
 											<li>
-												<a href="pages-signin.html">
+												<a href="<?php echo base_url('signin') ?>">
 													 Sign In
 												</a>
 											</li>
@@ -321,7 +321,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="pages-user-profile.html">
+												<a href="<?php echo base_url('profile') ?>">
 													 User Profile
 												</a>
 											</li>
