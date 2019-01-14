@@ -52,3 +52,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Awal';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['signin'] = 'Awal/signin';
+$route['signup'] = 'Awal/signup';
+$route['recpassword'] = 'Awal/recpassword';
+$route['calendar'] = 'Awal/calendar';
+$route['invoice'] = 'Awal/invoice';
+$route['invoicep'] = 'Awal/invoicep';
+$route['loacscreen'] = 'Awal/locscreen';
+$route['profile'] = 'Awal/profile';
+$route['timeout'] = 'Awal/timeout';
