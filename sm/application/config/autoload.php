@@ -133,3 +133,6 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array();
+
+//Tambahan Baru untuk DB dan Session
+$autoload['libraries'] = array('database', 'session');

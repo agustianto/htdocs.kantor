@@ -54,7 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['Awal'] = '';
-$route['signin'] = 'Login/signin';
+$route['signin'] = 'Login';
 $route['signup'] = 'Awal/signup';
 $route['recpassword'] = 'Awal/recpassword';
 $route['calendar'] = 'Awal/calendar';
