@@ -17,8 +17,7 @@ class Login extends CI_Controller{
 		$password = $this->input->post('password');
 		$where = array(
 			'username' => $username,
-			'password' => $password
-			//'password' => md5($password)
+			'password' => md5($password)
 			);
 		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
 		if($cek > 0){
