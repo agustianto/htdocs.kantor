@@ -2,4 +2,14 @@
 
 class mlogin extends CI_Model{
     
+    private $_table = "slogin";
+    public $usstu;
+    public $psstu;
+    public $clastu;
+    public $lastacstu;
+
+    public function rules(){
+        
+    }
+
 }

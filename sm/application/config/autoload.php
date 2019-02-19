@@ -136,3 +136,4 @@ $autoload['model'] = array();
 
 //Tambahan Baru untuk DB dan Session
 $autoload['libraries'] = array('database', 'session');
+
