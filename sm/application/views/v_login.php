@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Login</h1>
-	<form action="<?php echo base_url('login/aksi_login'); ?>" method="post">		
+	<form action="<?php echo base_url('aksi_login'); ?>" method="post">		
 		<table>
 			<tr>
 				<td>Username</td>
