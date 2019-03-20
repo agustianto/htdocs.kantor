@@ -23,10 +23,10 @@ class Awal extends CI_Controller {
 		$this->load->view('index');
 	}
 
-	// public function signin()
-	// {
-	// 	$this->load->view('pages-signin');
-	// }
+	public function signin()
+	{
+		$this->load->view('pages-signin');
+	}
 
 	public function signup()
 	{
