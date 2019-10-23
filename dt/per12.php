@@ -54,7 +54,7 @@ li a:hover:not(.active) {
 
 <div style="margin-left:25%;margin-right:25%;padding:1px 16px;height:0px; font-family: 'Arial';" class="container">
   <h2><-- Side Nav</h2>
-  <img src="images/dt.png" alt="DTS">
+  <img src="images/polije.jpg" alt="DTS">
   </br></br>
 
 <!-- Pertemuan 9 -->
@@ -335,7 +335,7 @@ li a:hover:not(.active) {
       $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
       $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     
-      if ($username="admin" && $password="root"){
+      if ($username=="admin" && $password=="root"){
         session_start();
         $_SESSION["user"] = $username;
         header("Location:per8.php");
@@ -361,9 +361,9 @@ li a:hover:not(.active) {
 <label for="alamat">Alamat anda:</label>
 <input type="text" class="form-control" id="alamat">
 </div> 
-<button type="submit" class="btn btn-primary">Simpan</button>
+<button type="submit" class="btn btn-primary">Simpan</button> -->
 </form>
-</div> -->
+</div>
 
 
 </body>
