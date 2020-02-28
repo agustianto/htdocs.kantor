@@ -79,7 +79,7 @@
 										<a href="#" class="fa fa-times"></a>
 									</div>
 
-									<h2 class="panel-title">Best Seller</h2>
+									<h2 class="panel-title">Best Seller 123</h2>
 									<p class="panel-subtitle">Customize the graphs as much as you want, there are so many options and features to display information using JSOFT Admin Template.</p>
 								</header>
 								<div class="panel-body">
@@ -395,8 +395,8 @@
 													<img src="assets/images/!logged-user.jpg">
 												</div>
 												<div class="profile-info">
-													<h4 class="name text-semibold">John Doe</h4>
-													<h5 class="role">Administrator</h5>
+													<h4 class="name text-semibold">Khafid</h4>
+													<h5 class="role">Ad</h5>
 													<div class="profile-footer">
 														<a href="#">(edit profile)</a>
 													</div>
@@ -857,7 +857,7 @@
 											<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
 										</figure>
 										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
+											<span class="name">Khafid</span>
 											<span class="title">Hey, how are you?</span>
 										</div>
 									</li>

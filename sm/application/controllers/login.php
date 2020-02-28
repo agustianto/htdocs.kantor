@@ -1,25 +1,25 @@
 <?php 
 
-class C_login extends CI_Controller{
+class Login extends CI_Controller{
 
 	function __construct(){
 		parent::__construct();		
-		$this->load->model('M_login');
+		$this->load->model('m_login');
 
 	}
 
 	function index(){
-		$this->load->view('v_login');
+		$this->load->view('pages-signin');
 	}
 
 	function aksi_login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$where = array(
-            'username' => $username,
-            'password' => $password
+			'username' => $username,
+			'password' => $password
 			);
-		$cek = $this->M_login->cek_login("admin",$where)->num_rows();
+		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
 		if($cek > 0){
 
 			$data_session = array(
@@ -32,7 +32,8 @@ class C_login extends CI_Controller{
 			redirect(base_url("admin"));
 
 		}else{
-			echo "Username dan password salah !";
+			echo "<script type='text/javascript'> alert('Username & Password Anda Salah!'); history.back(self);
+			</script>";
 		}
 	}
 
