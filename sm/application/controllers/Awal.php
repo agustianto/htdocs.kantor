@@ -52,4 +52,9 @@ class Awal extends CI_Controller {
 	{
 		$this->load->view('pages-user-profile');
 	}
+
+	public function tabel()
+	{
+		$this->load->view('tables-editable');
+	}
 }

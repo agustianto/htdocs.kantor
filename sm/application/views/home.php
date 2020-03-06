@@ -857,7 +857,7 @@
 											<img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
 										</figure>
 										<div class="profile-info">
-											<span class="name">Khafid</span>
+											<span class="name">Joseph Doe Junior</span>
 											<span class="title">Hey, how are you?</span>
 										</div>
 									</li>
