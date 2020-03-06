@@ -279,7 +279,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-responsive.html">
+												<a href=<?php echo base_url('tabel') ?>>
 													 Responsive
 												</a>
 											</li>
