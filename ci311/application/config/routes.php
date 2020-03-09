@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'satu';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['rmsatu'] = 'Satu/msatu';
+$route['rmdua'] = 'Satu/mdua';
+
