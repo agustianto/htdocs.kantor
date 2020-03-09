@@ -284,7 +284,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="tables-editable.html">
+												<a href=<?php echo base_url('tabel') ?>>
 													 Editable
 												</a>
 											</li>
