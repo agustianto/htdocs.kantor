@@ -53,6 +53,7 @@ $route['default_controller'] = 'satu';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['rmsatu'] = 'Satu/msatu';
-$route['rmdua'] = 'Satu/mdua';
+$route['rmsatu'] = 'satu/msatu';
+$route['rmdua'] = 'satu/mdua';
+$route['subdua'] = 'utama/dua';
 

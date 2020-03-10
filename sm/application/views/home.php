@@ -79,7 +79,7 @@
 										<a href="#" class="fa fa-times"></a>
 									</div>
 
-									<h2 class="panel-title">Best Seller 123</h2>
+									<h2 class="panel-title">Best Seller</h2>
 									<p class="panel-subtitle">Customize the graphs as much as you want, there are so many options and features to display information using JSOFT Admin Template.</p>
 								</header>
 								<div class="panel-body">

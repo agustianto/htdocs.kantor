@@ -21,13 +21,13 @@
 											<span>Dashboard</span>
 										</a>
 									</li>
-									<li>
+									<!-- <li>
 										<a href="mailbox-folder.html">
 											<span class="pull-right label label-primary">182</span>
 											<i class="fa fa-envelope" aria-hidden="true"></i>
 											<span>Mailbox</span>
 										</a>
-									</li>
+									</li> -->
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
@@ -49,7 +49,7 @@
 													 Recover Password
 												</a>
 											</li>
-											<li>
+											<!-- <li>
 												<a href="pages-lock-screen.html">
 													 Locked Screen
 												</a>
@@ -108,10 +108,16 @@
 												<a href="pages-search-results.html">
 													 Search Results
 												</a>
-											</li>
+											</li> -->
 										</ul>
 									</li>
-									<li class="nav-parent">
+									<li>
+										<a href="<?php echo base_url('tabel') ?>">
+											<i class="fa fa-cubes" aria-hidden="true"></i>
+											<span>CRUD</span>
+										</a>
+									</li>
+									<!-- <li class="nav-parent">
 										<a>
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>UI Elements</span>
@@ -389,13 +395,13 @@
 											<i class="fa fa-external-link" aria-hidden="true"></i>
 											<span>Front-End <em class="not-included">(Not Included)</em></span>
 										</a>
-									</li>
+									</li> -->
 								</ul>
 							</nav>
 				
 							<hr class="separator" />
 				
-							<div class="sidebar-widget widget-tasks">
+							<!-- <div class="sidebar-widget widget-tasks">
 								<div class="widget-header">
 									<h6>Projects</h6>
 									<div class="widget-toggle">+</div>
@@ -447,7 +453,7 @@
 										</li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 						</div>
 				
 					</div>

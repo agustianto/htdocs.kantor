@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Awal extends CI_Controller {
 
@@ -39,6 +38,11 @@ class Awal extends CI_Controller {
 	}
 
 	public function tabel()
+	{
+		$this->load->view('tables-basic');
+	}
+
+	public function tabeledit()
 	{
 		$this->load->view('tables-editable');
 	}
