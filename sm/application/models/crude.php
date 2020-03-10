@@ -29,7 +29,7 @@ class Crude extends CI_Model{
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id)
+    public function getById($username)
     {
         return $this->db->get_where($this->_table, ["username" => $username])->row();
     }
@@ -47,16 +47,16 @@ class Crude extends CI_Model{
     public function update()
     {
         $post = $this->input->post();
-        $this->product_id = $post["id"];
+        $this->id = $post[""];
         $this->name = $post["name"];
-        $this->price = $post["price"];
-        $this->description = $post["description"];
-        return $this->db->update($this->_table, $this, array('product_id' => $post['id']));
+        $this->username = $post["username"];
+        $this->password = $post["password"];
+        return $this->db->update($this->_table, $this, array('username' => $post['username']));
     }
 
-    public function delete($id)
+    public function delete($username)
     {
-        return $this->db->delete($this->_table, array("product_id" => $id));
+        return $this->db->delete($this->_table, array("username" => $username));
     }
 }
 }
