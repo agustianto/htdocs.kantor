@@ -59,6 +59,7 @@ $route['admin'] = 'Admin/load';
 $route['signin'] = 'Awal/signin';
 $route['signup'] = 'Awal/signup';
 $route['tabel'] = 'Awal/tabel';
+$route['tabel1'] = 'Ccrude';
 
 // $route['login'] = 'C_login/index';
 // $route['aksi_login'] = 'C_login/aksi_login';

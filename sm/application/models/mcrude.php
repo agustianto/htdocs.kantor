@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Crude extends CI_Model{	
+class Mcrude extends CI_Model{	
     
     private $_table = "admin";
     public $id;
@@ -58,5 +58,4 @@ class Crude extends CI_Model{
     {
         return $this->db->delete($this->_table, array("username" => $username));
     }
-}
 }

@@ -112,7 +112,7 @@
 										</ul>
 									</li>
 									<li>
-										<a href="<?php echo base_url('tabel') ?>">
+										<a href="<?php echo base_url('tabel1') ?>">
 											<i class="fa fa-cubes" aria-hidden="true"></i>
 											<span>CRUD</span>
 										</a>

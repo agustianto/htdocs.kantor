@@ -6,18 +6,18 @@ class Ccrude extends CI_Controller
     {
         parent::__construct();
         $this->load->model("mcrude");
-        // $this->load->library('form_validation');
+        $this->load->library('form_validation');
     }
 
     public function index()
     {
-        $data["admin"] = $this->crude->getAll();
-        $this->load->view("tables-editable", $data);
+        $data["admin"] = $this->mcrude->getAll();
+        $this->load->view("tables-basic", $data);
     }
 
     public function add()
     {
-        $product = $this->crude;
+        $product = $this->mcrude;
         $validation = $this->form_validation;
         $validation->set_rules($product->rules());
 
@@ -33,7 +33,7 @@ class Ccrude extends CI_Controller
     {
         if (!isset($id)) redirect('admin/products');
        
-        $product = $this->crude;
+        $product = $this->mcrude;
         $validation = $this->form_validation;
         $validation->set_rules($product->rules());
 
@@ -52,7 +52,7 @@ class Ccrude extends CI_Controller
     {
         if (!isset($id)) show_404();
         
-        if ($this->crude->delete($id)) {
+        if ($this->mcrude->delete($id)) {
             redirect(site_url('admin/products'));
         }
     }

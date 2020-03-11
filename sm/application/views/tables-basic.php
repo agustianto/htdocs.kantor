@@ -54,7 +54,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Basic Tables</h2>
+						<h2>Admin Tables</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -112,27 +112,7 @@
 														</td>
 													</tr>
 
-													<?php foreach ($products as $product): ?>
-													<tr>
-														<td width="150">
-															<?php echo $product->name ?>
-														</td>
-														<td>
-															<?php echo $product->price ?>
-														</td>
-														<td>
-															<img src="<?php echo base_url('upload/product/'.$product->image) ?>" width="64" />
-														</td>
-														<td class="small">
-															<?php echo substr($product->description, 0, 120) ?>...</td>
-														<td width="250">
-															<a href="<?php echo site_url('admin/products/edit/'.$product->product_id) ?>">
-															<i class="fa fa-pencil"></i></a>
-															<a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')">
-															<a href="" class="delete-row"><i class="fa fa-trash-o"></i></a>
-														</td>
-													</tr>
-													<?php endforeach; ?>
+													
 																										
 												</tbody>
 											</table>

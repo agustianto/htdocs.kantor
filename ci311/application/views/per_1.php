@@ -90,5 +90,13 @@
 
 ?>
 
+	<?php
+		foreach ($data as $a) {
+			echo "Nama : ".$a['nama']."</br>";
+		}
+
+		//echo "Nama : ".$nama."</br>";
+	?>
+
 </body>
 </html>
