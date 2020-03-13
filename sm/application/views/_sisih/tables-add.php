@@ -82,7 +82,7 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 										
-										<a href="<?php echo base_url('tambah') ?>">					
+										<a href="<?php echo site_url('awal/add') ?>">					
 										<button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">
 										<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Data</button>
 										</a>
@@ -100,34 +100,51 @@
 														<th>Password</th>
 														<th>Aksi</th>
 													</tr>
-												</thead>
-												<tbody>
-
-													<?php foreach ($admin as $a): ?>
-													<tr>
-														<td>
-															<?php echo $a->id; ?>
-														</td>
-														<td>
-															<?php echo $a->name; ?>
-														</td>
-														<td>
-															<?php echo $a->username; ?>
-														</td>
-														<td>
-															<?php echo $a->password; ?>
-														<td class="actions">			
-															<a href="<?php 
-																$this->session->dedit;
-																echo base_url('edit') ?>">
-															<i class="fa fa-pencil"></i></a>
-															<a href="<?php echo site_url('ccrude/hapus/'.$a->id) ?>">
-															<i class="fa fa-trash-o"></i></a>
-														</td>
-													</tr>
-													<?php endforeach; ?>
+												</thead>												
 											</table>
 										</div>
+
+										<form action="<?php base_url('tabeladd') ?>" method="post" enctype="multipart/form-data" >
+										<div class="form-group">
+											<label for="name">Name*</label>
+											<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
+											type="text" name="name" placeholder="Product name" />
+											<div class="invalid-feedback">
+												<?php echo form_error('name') ?>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="price">Price*</label>
+											<input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>"
+											type="number" name="price" min="0" placeholder="Product price" />
+											<div class="invalid-feedback">
+												<?php echo form_error('price') ?>
+											</div>
+										</div>
+
+
+										<div class="form-group">
+											<label for="name">Photo</label>
+											<input class="form-control-file <?php echo form_error('price') ? 'is-invalid':'' ?>"
+											type="file" name="image" />
+											<div class="invalid-feedback">
+												<?php echo form_error('image') ?>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="name">Description*</label>
+											<textarea class="form-control <?php echo form_error('description') ? 'is-invalid':'' ?>"
+											name="description" placeholder="Product description..."></textarea>
+											<div class="invalid-feedback">
+												<?php echo form_error('description') ?>
+											</div>
+										</div>
+
+										<input class="btn btn-success" type="submit" name="btn" value="Save" />
+									</form>
+
 									</div>
 								</section>
 							</div>

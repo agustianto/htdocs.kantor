@@ -2,9 +2,16 @@
 
 class Awal extends CI_Controller {
 
+	function __construct(){
+		parent::__construct();		
+		$this->load->model('mcrude');
+		$this->load->library('form_validation');
+	}
+
 	public function index()
 	{
-		$this->load->view('home');
+		$data['user'] = $this->session->userdata('nama');
+		$this->load->view('home',$data);
 	}
 
 	public function signin()
@@ -39,11 +46,47 @@ class Awal extends CI_Controller {
 
 	public function tabel()
 	{
-		$this->load->view('tables-basic');
+		$data['user'] = $this->session->userdata('nama');
+		$data['admin'] = $this->mcrude->getAll();
+		$this->load->view('tables-basic',$data);
 	}
+
+	public function add()
+    {
+		$data['user'] = $this->session->userdata('nama');
+		$uji = $this->mcrude;
+        $validation = $this->form_validation;
+        $validation->set_rules($uji->rules());
+
+        if ($validation->run()) {
+            $uji->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $this->load->view('tables-add',$data);
+    }
 
 	public function tabeledit()
 	{
-		$this->load->view('tables-editable');
+		$data['user'] = $this->session->userdata('nama');
+		// $this->load->view('tables-edit',$data);
+
+
+		if (!isset($username)) redirect('tabel');
+       
+        $uji = $this->mcrude;
+        $validation = $this->form_validation;
+        $validation->set_rules($uji->rules());
+
+        if ($validation->run()) {
+            $uji->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["uji"] = $uji->getById($username);
+        if (!$data["uji"]) show_404();
+        
+		$this->load->view("tabels-edit", $data);
+		
 	}
 }

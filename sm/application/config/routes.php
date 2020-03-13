@@ -58,7 +58,12 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin'] = 'Admin/load';
 $route['signin'] = 'Awal/signin';
 $route['signup'] = 'Awal/signup';
+$route['logout'] = 'Login/logout';
 $route['tabel'] = 'Awal/tabel';
+$route['edit'] = 'ccrude/edit';
+$route['tambah'] = 'ccrude/tambah';
+
+
 $route['tabel1'] = 'Ccrude';
 
 // $route['login'] = 'C_login/index';

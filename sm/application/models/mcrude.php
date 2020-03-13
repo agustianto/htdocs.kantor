@@ -3,13 +3,15 @@
 class Mcrude extends CI_Model{	
     
     private $_table = "admin";
+
     public $id;
     public $name;
     public $username;
-    public $pass;
+    public $password;
     
-    public function rule(){
+    public function rules(){
         return [
+            
             ['field' => 'name',
             'label' => 'Name',
             'rules' => 'required'],
@@ -29,33 +31,26 @@ class Mcrude extends CI_Model{
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($username)
+    public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["username" => $username])->row();
+        return $this->db->get_where($this->_table, ["id" => $id])->row();
     }
 
-    public function save()
-    {
-        $post = $this->input->post();
-        $this->id = $post[""];
-        $this->name = $post["name"];
-        $this->username = $post["username"];
-        $this->password = $post["password"];
-        return $this->db->insert($this->_table, $this);
+    function delete($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
     }
-
-    public function update()
-    {
-        $post = $this->input->post();
-        $this->id = $post[""];
-        $this->name = $post["name"];
-        $this->username = $post["username"];
-        $this->password = $post["password"];
-        return $this->db->update($this->_table, $this, array('username' => $post['username']));
+    
+    function input_data($data,$table){
+		$this->db->insert($table,$data);
     }
-
-    public function delete($username)
-    {
-        return $this->db->delete($this->_table, array("username" => $username));
-    }
+    
+    function edit_data($where,$table){		
+		return $this->db->get_where($table,$where);
+	}
+ 
+	function update_data($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}	
 }

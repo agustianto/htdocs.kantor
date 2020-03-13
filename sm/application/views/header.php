@@ -192,7 +192,16 @@
 								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
-								<span class="name"> <?php $this->session->userdata('status'); ?> </span>
+								<span class="name"> 
+								<?php 
+									if ($user != ""){
+										echo $user;
+									} else {
+										echo "Sample";
+									}
+									 
+								?> 
+								</span>
 								<span class="role">administrator</span>
 							</div>
 			
@@ -209,7 +218,7 @@
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="<?php echo base_url('signin') ?>"><i class="fa fa-power-off"></i> Logout</a>
+									<a role="menuitem" tabindex="-1" href="<?php echo base_url('logout') ?>"><i class="fa fa-power-off"></i> Logout</a>
 								</li>
 							</ul>
 						</div>

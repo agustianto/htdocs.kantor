@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Basic Tables | Okler Themes | Porto-Admin</title>
+		<title>Basic Forms | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -23,9 +23,7 @@
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
-		<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
+		<link rel="stylesheet" href="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -44,7 +42,7 @@
 		<section class="body">
 
 			<!-- start: header -->
-				<?php include 'header.php'; ?>
+			<?php include 'header.php'?>
 			<!-- end: header -->
 
 			<div class="inner-wrapper">
@@ -54,7 +52,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Admin Tables</h2>
+						<h2>Edit Forms</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -63,7 +61,7 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>Tables</span></li>
+								<li><span>Forms</span></li>
 								<li><span>Basic</span></li>
 							</ol>
 					
@@ -72,68 +70,61 @@
 					</header>
 
 					<!-- start: page -->
-					<div class="row">
-							<div class="col-md-15">
-
+						<div class="row">
+							<div class="col-lg-12">
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
 											<a href="#" class="fa fa-caret-down"></a>
 											<a href="#" class="fa fa-times"></a>
 										</div>
-										
-										<a href="<?php echo base_url('tambah') ?>">					
-										<button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">
-										<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Data</button>
-										</a>
-
+						
+										<h2 class="panel-title">Form Elements</h2>
 									</header>
-
 									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table mb-none">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>Nama Lengkap</th>
-														<th>Username</th>
-														<th>Password</th>
-														<th>Aksi</th>
-													</tr>
-												</thead>
-												<tbody>
+										<form class="form-horizontal form-bordered" action="<?php echo base_url('ccrude/tambah_aksi'); ?>" method="post">
+											
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputDisabled">Id</label>
+												<div class="col-md-6">
+													<input class="form-control" id="inputDisabled" type="text" placeholder="Disabled input here..." disabled="">
+												</div>
+											</div>
 
-													<?php foreach ($admin as $a): ?>
-													<tr>
-														<td>
-															<?php echo $a->id; ?>
-														</td>
-														<td>
-															<?php echo $a->name; ?>
-														</td>
-														<td>
-															<?php echo $a->username; ?>
-														</td>
-														<td>
-															<?php echo $a->password; ?>
-														<td class="actions">			
-															<a href="<?php 
-																$this->session->dedit;
-																echo base_url('edit') ?>">
-															<i class="fa fa-pencil"></i></a>
-															<a href="<?php echo site_url('ccrude/hapus/'.$a->id) ?>">
-															<i class="fa fa-trash-o"></i></a>
-														</td>
-													</tr>
-													<?php endforeach; ?>
-											</table>
-										</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputFocus">Nama</label>
+												<div class="col-md-6">
+
+													<input type="text" class="form-control" id="inputFocus" name="name" value="<?php echo $usere->id; ?>">
+													<span class="help-block">Isikan Nama Lengkap Anda</span>
+												
+												</div>
+											</div>
+		
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputPlaceholder">Username</label>
+												<div class="col-md-6">
+													<input type="text" class="form-control" placeholder="placeholder" id="inputPlaceholder" name="username"> 
+												</div>
+											</div>
+						
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputPassword">Password</label>
+												<div class="col-md-6">
+													<input type="password" class="form-control" placeholder="" id="inputPassword" name="password">
+												</div>
+											</div>				
+
+											<div style="margin-left:64.5%;margin-right:0%;">
+												<button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">
+												<i type="submit" class="fa fa-plus-square" aria-hidden="true"></i> Simpan</button>
+											</div>
+										</form>
 									</div>
 								</section>
+	
 							</div>
-							
 						</div>
-
 
 					<!-- end: page -->
 				</section>
@@ -216,6 +207,10 @@
 		<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+		
+		<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+		<script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>

@@ -11,49 +11,44 @@ class Ccrude extends CI_Controller
 
     public function index()
     {
-        $data["admin"] = $this->mcrude->getAll();
+        $data['admin'] = $this->mcrude->getAll();
+        $data['user'] = $this->session->userdata('nama');
         $this->load->view("tables-basic", $data);
     }
-
-    public function add()
-    {
-        $product = $this->mcrude;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
-
-        if ($validation->run()) {
-            $product->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-
-        $this->load->view("admin/product/new_form");
+    
+    function hapus($id){
+		$where = array('id' => $id);
+		$this->mcrude->delete($where,'admin');
+		redirect('ccrude');
     }
-
-    public function edit($id = null)
-    {
-        if (!isset($id)) redirect('admin/products');
-       
-        $product = $this->mcrude;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
-
-        if ($validation->run()) {
-            $product->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-
-        $data["product"] = $product->getById($id);
-        if (!$data["product"]) show_404();
+    
+    function tambah(){
+        $data['user'] = $this->session->userdata('nama');
+        $this->load->view('padd',$data);
+	}
+ 
+	function tambah_aksi(){
+		$name = $this->input->post('name');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+ 
+		$data = array(
+			'name' => $name,
+			'username' => $username,
+			'password' => $password
+			);
+		$this->mcrude->input_data($data,'admin');
+		redirect('ccrude');
+    }
+    
+    function edit(){
+        //$id = $this->session->dedit;
+        $id = "10";
+        $where = array('id' => '10');
         
-        $this->load->view("admin/product/edit_form", $data);
-    }
+        $data['user'] = $this->session->userdata('nama');
+		$data['usere'] = $this->mcrude->edit_data($where,'admin')->result();
+		$this->load->view('pedit',$data);
+	}
 
-    public function delete($id=null)
-    {
-        if (!isset($id)) show_404();
-        
-        if ($this->mcrude->delete($id)) {
-            redirect(site_url('admin/products'));
-        }
-    }
 }

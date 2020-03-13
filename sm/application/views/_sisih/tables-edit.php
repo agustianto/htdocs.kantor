@@ -81,51 +81,90 @@
 											<a href="#" class="fa fa-caret-down"></a>
 											<a href="#" class="fa fa-times"></a>
 										</div>
-										
-										<a href="<?php echo base_url('tambah') ?>">					
+															
 										<button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">
 										<i class="fa fa-plus-square" aria-hidden="true"></i> Tambah Data</button>
-										</a>
 
 									</header>
 
 									<div class="panel-body">
 										<div class="table-responsive">
 											<table class="table mb-none">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>Nama Lengkap</th>
-														<th>Username</th>
-														<th>Password</th>
-														<th>Aksi</th>
-													</tr>
-												</thead>
-												<tbody>
+												
 
-													<?php foreach ($admin as $a): ?>
-													<tr>
-														<td>
-															<?php echo $a->id; ?>
-														</td>
-														<td>
-															<?php echo $a->name; ?>
-														</td>
-														<td>
-															<?php echo $a->username; ?>
-														</td>
-														<td>
-															<?php echo $a->password; ?>
-														<td class="actions">			
-															<a href="<?php 
-																$this->session->dedit;
-																echo base_url('edit') ?>">
-															<i class="fa fa-pencil"></i></a>
-															<a href="<?php echo site_url('ccrude/hapus/'.$a->id) ?>">
-															<i class="fa fa-trash-o"></i></a>
-														</td>
-													</tr>
-													<?php endforeach; ?>
+											<?php if ($this->session->flashdata('success')): ?>
+											<div class="alert alert-success" role="alert">
+												<?php echo $this->session->flashdata('success'); ?>
+											</div>
+											<?php endif; ?>
+
+											<!-- Card  -->
+											<div class="card mb-3">
+												<div class="card-header">
+
+													<a href="<?php echo site_url('admin/products/') ?>"><i class="fas fa-arrow-left"></i>
+														Back</a>
+												</div>
+												<div class="card-body">
+
+													<form action="<?php base_url(" admin/product/edit") ?>" method="post"
+														enctype="multipart/form-data" >
+
+														<input type="hidden" name="id" value="<?php echo $product->product_id?>" />
+
+														<div class="form-group">
+															<label for="name">Name*</label>
+															<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
+															type="text" name="name" placeholder="Product name" value="<?php echo $product->name ?>" />
+															<div class="invalid-feedback">
+																<?php echo form_error('name') ?>
+															</div>
+														</div>
+
+														<div class="form-group">
+															<label for="price">Price</label>
+															<input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>"
+															type="number" name="price" min="0" placeholder="Product price" value="<?php echo $product->price ?>" />
+															<div class="invalid-feedback">
+																<?php echo form_error('price') ?>
+															</div>
+														</div>
+
+
+														<div class="form-group">
+															<label for="name">Photo</label>
+															<input class="form-control-file <?php echo form_error('price') ? 'is-invalid':'' ?>"
+															type="file" name="image" />
+															<input type="hidden" name="old_image" value="<?php echo $product->image ?>" />
+															<div class="invalid-feedback">
+																<?php echo form_error('image') ?>
+															</div>
+														</div>
+
+														<div class="form-group">
+															<label for="name">Description*</label>
+															<textarea class="form-control <?php echo form_error('description') ? 'is-invalid':'' ?>"
+															name="description" placeholder="Product description..."><?php echo $product->description ?></textarea>
+															<div class="invalid-feedback">
+																<?php echo form_error('description') ?>
+															</div>
+														</div>
+
+														<input class="btn btn-success" type="submit" name="btn" value="Save" />
+													</form>
+
+												</div>
+
+												<div class="card-footer small text-muted">
+													* required fields
+												</div>
+
+
+											</div>
+											<!-- /.container-fluid -->
+
+
+
 											</table>
 										</div>
 									</div>
