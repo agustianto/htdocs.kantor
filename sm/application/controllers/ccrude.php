@@ -44,11 +44,34 @@ class Ccrude extends CI_Controller
     function edit(){
         //$id = $this->session->dedit;
         $id = "10";
-        $where = array('id' => '10');
+
+        $res = array(
+            'id' => "10"
+        );
         
         $data['user'] = $this->session->userdata('nama');
-		$data['usere'] = $this->mcrude->edit_data($where,'admin')->result();
+		$data['admin'] = $this->mcrude->edit_data(["id" => "10"],'admin');
 		$this->load->view('pedit',$data);
-	}
+    }
+    
+    function update(){
+        $id = $this->input->post('id');
+        $name = $this->input->post('name');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+     
+        $data = array(
+            'name' => $name,
+            'username' => $username,
+            'password' => $password
+        );
+     
+        $where = array(
+            'id' => $id
+        );
+     
+        $this->m_data->update_data($where,$data,'admin');
+        redirect('ccrude');
+    }
 
 }

@@ -82,7 +82,7 @@
 										<h2 class="panel-title">Form Elements</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" action="<?php echo base_url('ccrude/tambah_aksi'); ?>" method="post">
+										<form class="form-horizontal form-bordered" action="<?php echo base_url('ccrude/update'); ?>" method="post">
 											
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDisabled">Id</label>
@@ -95,7 +95,7 @@
 												<label class="col-md-3 control-label" for="inputFocus">Nama</label>
 												<div class="col-md-6">
 
-													<input type="text" class="form-control" id="inputFocus" name="name" value="<?php echo $usere->id; ?>">
+													<input type="text" class="form-control" id="inputFocus" name="name" value="<?php echo $admin->id; ?>">
 													<span class="help-block">Isikan Nama Lengkap Anda</span>
 												
 												</div>

@@ -31,10 +31,10 @@ class Mcrude extends CI_Model{
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id)
-    {
-        return $this->db->get_where($this->_table, ["id" => $id])->row();
-    }
+    // public function getById($id)
+    // {
+    //     return $this->db->get_where($this->_table, ["id" => $id])->row();
+    // }
 
     function delete($where,$table){
 		$this->db->where($where);
@@ -46,11 +46,12 @@ class Mcrude extends CI_Model{
     }
     
     function edit_data($where,$table){		
-		return $this->db->get_where($table,$where);
+		return $this->db->get_where($table,$where)->result_array();
 	}
  
 	function update_data($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
-	}	
+    }	
+        
 }

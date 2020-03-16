@@ -19,7 +19,9 @@ class Login extends CI_Controller{
 			'username' => $username,
 			'password' => $password
 			);
+
 		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
+		
 		if($cek > 0){
 
 			$data_session = array(
