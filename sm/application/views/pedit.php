@@ -47,7 +47,7 @@
 
 			<div class="inner-wrapper">
 				<!-- start: sidebar -->
-				<?php include 'sidebar.php'; ?>
+				<?php include 'sidebar.php'?>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
@@ -82,7 +82,7 @@
 										<h2 class="panel-title">Form Elements</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" action="<?php echo base_url('ccrude/update'); ?>" method="post">
+										<form class="form-horizontal form-bordered" action="<?php echo base_url('cedit'); ?>" method="post">
 											
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputDisabled">Id</label>
@@ -95,7 +95,7 @@
 												<label class="col-md-3 control-label" for="inputFocus">Nama</label>
 												<div class="col-md-6">
 
-													<input type="text" class="form-control" id="inputFocus" name="name" value="<?php echo $admin->id; ?>">
+													<input type="text" class="form-control" id="inputFocus" name="name" value="<?php echo $user; ?>">
 													<span class="help-block">Isikan Nama Lengkap Anda</span>
 												
 												</div>

@@ -63,6 +63,8 @@ $route['tabel'] = 'Awal/tabel';
 $route['edit'] = 'ccrude/edit';
 $route['tambah'] = 'ccrude/tambah';
 
+$route['ubah'] = 'cedit/edit';
+
 
 $route['tabel1'] = 'Ccrude';
 
