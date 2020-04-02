@@ -5,14 +5,21 @@ if(!isset($_SESSION['user'])){
 }
 elseif(isset($_SESSION['user'])){
     $nim = $_SESSION['user'];
-    mysql_connect('localhost','root','');
-    mysql_select_db('latih');
-    $query1 = mysql_query("select * from meta_angket where nim = '".$_SESSION['user']."'");
-        $a1 = mysql_fetch_array($query1); 
+    $con = mysqli_connect('localhost','root','','latih');
+    // mysql_connect('localhost','root','');
+    // mysql_select_db('latih');
+    $query1 = mysqli_query($con, "select * from meta_angket where nim = '".$_SESSION['user']."'");
+
+    if (!$query1) {
+        printf("Error: %s\n", mysqli_error($con));
+        exit();
+    }
+        $a1 = mysqli_fetch_array($query1); 
         $s1 = $a1['mhasil'];
         if ($s1!="") {
             header("location:lpmtables.php");
         }
+
 }
 ?>
 
@@ -69,8 +76,8 @@ elseif(isset($_SESSION['user'])){
 
 <?php if(isset($_POST['Submit'])){
 
-$query = mysql_query("select * from meta_angket where nim = '".$_SESSION['user']."'");
-    $aa = mysql_fetch_array($query); 
+$query = mysqli_query($con, "select * from meta_angket where nim = '".$_SESSION['user']."'");
+    $aa = mysqli_fetch_array($query); 
     $ss = $aa['nim'];
     
     if ($_SESSION['user'] != $ss) {
@@ -103,8 +110,8 @@ $query = mysql_query("select * from meta_angket where nim = '".$_SESSION['user']
         $pr[$v] = 0;
     }
 
-    $query = mysql_query('select * from meta_angket');
-    while ($data=mysql_fetch_array($query)) {
+    $query = mysqli_query($con,'select * from meta_angket');
+    while ($data=mysqli_fetch_array($query)) {
 
         if ($data['mhasil'] == 'RM')
             $pr[80]++;
@@ -518,7 +525,7 @@ $query = mysql_query("select * from meta_angket where nim = '".$_SESSION['user']
     elseif ($varsu[1] == $varsu[0])
         $type = 'RM';
 
-    mysql_query("INSERT INTO `meta_angket`(`nim`,`m1`,`m2`,`m3`,`m4`,`m5`,`m6`,`m7`,`m8`,`m9`,`m10`,`m11`,`m12`,`m13`,`m14`,`m15`,`m16`,`m17`,`m18`,`m19`,`m20`,`m21`,`m22`,`m23`,`m24`,`m25`,`m26`,`m27`,`m28`,`m29`,`m30`,`m31`,`m32`,`m33`,`m34`,`m35`,`m36`,`m37`,`m38`,`m39`,`m40`,`m41`,`m42`,`m43`,`m44`,`m45`,`m46`,`m47`,`m48`,`m49`,`m50`,`m51`,`m52`,`sm1`,`sm2`,`sm3`,`sm4`,`sm5`,`sm6`,`sm7`,`sm8`,`rsm1`,`rsm2`,`rsm3`,`rsm4`,`rsm5`,`rsm6`,`rsm7`,`rsm8`,`mhasil`) 
+    mysqli_query($con, "INSERT INTO `meta_angket`(`nim`,`m1`,`m2`,`m3`,`m4`,`m5`,`m6`,`m7`,`m8`,`m9`,`m10`,`m11`,`m12`,`m13`,`m14`,`m15`,`m16`,`m17`,`m18`,`m19`,`m20`,`m21`,`m22`,`m23`,`m24`,`m25`,`m26`,`m27`,`m28`,`m29`,`m30`,`m31`,`m32`,`m33`,`m34`,`m35`,`m36`,`m37`,`m38`,`m39`,`m40`,`m41`,`m42`,`m43`,`m44`,`m45`,`m46`,`m47`,`m48`,`m49`,`m50`,`m51`,`m52`,`sm1`,`sm2`,`sm3`,`sm4`,`sm5`,`sm6`,`sm7`,`sm8`,`rsm1`,`rsm2`,`rsm3`,`rsm4`,`rsm5`,`rsm6`,`rsm7`,`rsm8`,`mhasil`) 
         VALUES ('$nim','$perta[2]','$perta[3]','$perta[4]','$perta[5]','$perta[6]','$perta[7]','$perta[8]','$perta[9]','$perta[10]','$perta[11]','$perta[12]','$perta[13]','$perta[14]','$perta[15]','$perta[16]','$perta[17]','$perta[18]','$perta[19]','$perta[20]','$perta[21]','$perta[22]','$perta[23]','$perta[24]','$perta[25]','$perta[26]','$perta[27]','$perta[28]','$perta[29]','$perta[30]','$perta[31]','$perta[32]','$perta[33]','$perta[34]','$perta[35]','$perta[36]','$perta[37]','$perta[38]','$perta[39]','$perta[40]','$perta[41]','$perta[42]','$perta[43]','$perta[44]','$perta[45]','$perta[46]','$perta[47]','$perta[48]','$perta[49]','$perta[50]','$perta[51]','$perta[52]','$perta[53]',' $vsm[0]',' $vsm[1]',' $vsm[2]',' $vsm[3]',' $vsm[4]',' $vsm[5]',' $vsm[6]',' $vsm[7]',' $vsmr[0]',' $vsmr[1]',' $vsmr[2]',' $vsmr[3]',' $vsmr[4]',' $vsmr[5]',' $vsmr[6]',' $vsmr[7]','$type')");
     
     header("location:dashboard.php");
@@ -551,11 +558,12 @@ $query = mysql_query("select * from meta_angket where nim = '".$_SESSION['user']
                                     </thead>
                                     <tbody>
                                         <?php
-                                            mysql_connect('localhost','root','');
-                                            mysql_select_db('latih');
-                                            $query = mysql_query('select * from meta_table');
+                                            mysqli_connect('localhost','root','','latih');
+                                            // mysql_connect('localhost','root','');
+                                            // mysql_select_db('latih');
+                                            $query = mysqli_query($con,'select * from meta_table');
                                             $no = 1;
-                                            while ($data=mysql_fetch_array($query)) {
+                                            while ($data=mysqli_fetch_array($query)) {
                                                 echo "<tr>";
                                                 echo "<td>".$no++.'</td>';
                                                 echo "<td>".$data['pertanyaan'].'</td>';

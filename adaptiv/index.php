@@ -74,8 +74,9 @@ if(isset($_SESSION['user'])){
 /*session_start(); setcookie( $_SESSION['user'], $_SESSION['user'],time()-(3600));*/
 
 if(isset($_POST['Submit'])){
-    mysql_connect('localhost','root','');
-    mysql_select_db('latih');
+    mysqli_connect('localhost','root','','latih');
+    //mysql_connect('localhost','root','');
+    //mysql_select_db('latih');
     $uss = $_POST['nim'];
     $pas = $_POST['password'];
     if ($uss == $pas){
