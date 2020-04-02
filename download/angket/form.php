@@ -335,9 +335,47 @@
                                             </div>
 
                                             <?php
+                                                for ($i=0; $i < 30 ; $i++) { 
+                                                    # code...
+                                                    $a = $i+1;
+                                                    echo"
+                                                    <div class='row form-group'>
+                                                        <div class='col col-8' style='margin-left:0%;margin-right:10%;'>".$a."</div>
+                                                        <div class='col col-8' style='margin-left:10%;margin-right:28%;'><label for='select' class='form-control-label'>Saya menyadari bahwa saya menyenangi komputer sejak sekolah dasar. Dengan kuliah di jurusan Ilmu Komputer, saya menambah wawasan dan pengetahuan saya tentang komputer.</label></div>
+                                                        
+                                                        <div class='form-check-inline form-check' style='margin-left:72%;'>
+                                                            <div style='padding:0px 15px;'>
+                                                            <label for='inline-radio1' class='form-check-label '>
+                                                                <input type='radio' id='inline-radio1' name='inline-radios' value='option1' class='form-check-input'>One
+                                                            </label>
+                                                            </div>
+                                                            <div style='padding:0px 15px;'>
+                                                            <label for='inline-radio2' class='form-check-label '>
+                                                                <input type='radio' id='inline-radio2' name='inline-radios' value='option2' class='form-check-input'>Two
+                                                            </label>
+                                                            </div>
+                                                            <div style='padding:0px 15px;'>
+                                                            <label for='inline-radio3' class='form-check-label '>
+                                                                <input type='radio' id='inline-radio3' name='inline-radios' value='option3' class='form-check-input'>Three
+                                                            </label>
+                                                            </div>
+                                                            <div style='padding:0px 15px;'>
+                                                            <label for='inline-radio4' class='form-check-label '>
+                                                                <input type='radio' id='inline-radio2' name='inline-radios' value='option2' class='form-check-input'>Forth
+                                                            </label>
+                                                            </div>
+                                                            <div style='padding:0px 15px;'>
+                                                            <label for='inline-radio5' class='form-check-label '>
+                                                                <input type='radio' id='inline-radio3' name='inline-radios' value='option3' class='form-check-input'>Five
+                                                            </label>
+                                                            </div>
+                                                        </div>
 
+                                                    </div>
+                                                    ";
+                                                }
                                             ?>
-                                            <div class="row form-group">
+                                            <!-- <div class="row form-group">
                                                 <div class="col col-md-8"><label class=" form-control-label">Pertanyaan</label></div>
                                                     <div class="col col-md-4">
                                                         <div class="form-check-inline form-check">
@@ -368,7 +406,7 @@
                                                             </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                             <div>
                                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
